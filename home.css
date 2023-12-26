@@ -1,0 +1,118 @@
+.navbar.navbar {
+  background-color: #f7f7f7;
+  width: 100%;
+}
+
+#navbarNav {
+  justify-content: space-around;
+}
+
+body {
+  background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 100%);
+}
+
+.nav-item {
+  color: black;
+  font-size: 18px;
+  font-family: "Lexend";
+  font-weight: bold;
+  word-wrap: break-word;
+  letter-spacing: 0.08rem;
+  padding: 16px;
+  text-align: center;
+}
+
+#logo {
+  margin: 2%;
+  height: 115px;
+}
+
+.home-pic-container img {
+  height: 100%;
+  width: 800px;
+  top: 20px;
+}
+
+.home-pic-container {
+  position: relative;
+  bottom: 40px;
+}
+
+.main-text {
+  width: 400px;
+  height: 190px;
+  position: relative;
+  left: 50px;
+  bottom: 200px;
+  justify-content: center;
+}
+#hey {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.main-text h1 {
+  color: black;
+  font-size: 60px;
+  font-family: Inter;
+  word-wrap: break-word;
+}
+
+.main-text p {
+  color: black;
+  font-size: 20px;
+  font-family: "Inter";
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.footer {
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+}
+
+.footer p {
+  font-family: Arial, sans-serif; /* Replace with your preferred font */
+  font-size: 14px;
+  color: #888;
+}
+
+@media (min-width: 992px) {
+  .main {
+    display: flex;
+    justify-content: space-between; /* Add space between items */
+    align-items: flex-start; /* Align items at the start */
+  }
+
+  .home-pic-container {
+    order: 2; /* Change the order to display on the right */
+    margin-left: auto;
+    top: 20px; /* Push the container to the right */
+  }
+  .home-pic-container img {
+    width: 1000px;
+  }
+
+  .main-text {
+    order: 1;
+    width: 400px;
+    height: 190px;
+    position: relative;
+    top: 300px;
+    left: 100px;
+  }
+
+  .main-text p {
+    font-size: 22px;
+  }
+
+  .main-text h1 {
+    color: black;
+    font-size: 32px;
+    font-family: "Inter";
+    word-wrap: break-word;
+    font-weight: bold;
+  }
+}

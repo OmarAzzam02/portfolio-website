@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar.navbar {
+  background-color: #f7f7f7;
+  width: 100%;
+}
+
+#navbarNav {
+  justify-content: space-around;
+}
+
+.nav-item {
+  color: black;
+  font-size: 18px;
+  font-family: "Lexend";
+  font-weight: bold;
+  word-wrap: break-word;
+  letter-spacing: 0.08rem;
+  padding: 16px;
+  text-align: center;
+}
+
+#logo {
+  margin: 2%;
+  height: 115px;
+}
+
+/*<div> <img src="assets/Rectangle 2background.png" alt=""></div>*/
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("assets/background.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.container {
+  max-height: 1100px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0 3rem;
+}
+
+p {
+  font-size: 0.9rem;
+  color: white;
+  line-height: 1.7rem;
+}
+
+.image-container {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  margin-bottom: 1rem;
+}
+
+/*-------------------------- FOR DESKTOP  ------------------------*/
+
+@media (min-width: 992px) {
+  html,
+  body {
+    background-size: contain;
+  }
+
+  .image-container {
+    margin-top: 7.5rem;
+    padding-left: 5rem;
+    margin-right: 7rem;
+  }
+
+  html,
+  body {
+    background-attachment: none;
+  }
+
+  .content {
+    margin-right: 5rem;
+    text-align: justify;
+  }
+}
