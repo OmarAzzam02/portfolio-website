@@ -25,10 +25,9 @@
       src="https://kit.fontawesome.com/7b0357f5f0.js"
       crossorigin="anonymous"
     ></script>
-    <!-- Linking CSS File index.css -->
-
-    <link rel="stylesheet" href="CSS/contact.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="JS/contact.js"></script>
+  <link rel="stylesheet" href="CSS/contact.css">
     <title>Contact US</title>
   </head>
 
@@ -78,26 +77,28 @@
     <div class="card shadow">
       <h1 class="title">Get in touch</h1>
 
+      <form id="contact" action="handle_message.php" method="POST">
       <div class="container">
         <div class="contact-form row">
+          
           <div class="form-field col-lg-6">
-            <input type="text" id="fname" class="input-text" name="" />
+            <input type="text" id="fname" class="input-text" name="fname" />
             <label for="fname" class="label">First Name</label>
           </div>
           <div class="form-field col-lg-6">
-            <input type="text" id="lname" class="input-text" name="" />
+            <input type="text" id="lname" class="input-text" name="lname" />
             <label for="lname" class="label">Last Name</label>
           </div>
           <div class="form-field col-lg-6">
-            <input type="email" id="email" class="input-text" name="" />
+            <input type="email" id="email" class="input-text" name="email" />
             <label for="email" class="label">Email</label>
           </div>
           <div class="form-field col-lg-6">
-            <input type="text" id="phone" class="input-text" name="" />
+            <input type="text" id="phone" class="input-text" name="phone" />
             <label for="phone" class="label">Contact-Number</label>
           </div>
           <div class="form-field col-lg-12">
-            <input type="text" id="message" class="input-text" name="" />
+            <input type="text" id="message" class="input-text" name="message" />
             <label for="message" class="label">Message</label>
           </div>
           <div class="form-field col-lg-12">
@@ -105,6 +106,29 @@
           </div>
         </div>
       </div>
+      </form>
     </div>
+
+    <footer class="footer">
+      <ul class="socialIcons">
+        <li class="facebook">
+          <a href=""><i class="fa fa-fw fa-facebook"></i></a>
+        </li>
+        <li class="twitter">
+          <a href=""><i class="fa fa-fw fa-twitter"></i></a>
+        </li>
+        <li class="instagram">
+          <a href=""><i class="fa fa-fw fa-instagram"></i></a>
+        </li>
+        <li class="linkedin">
+          <a href=""><i class="fa fa-fw fa-linkedin"></i></a>
+        </li>
+        <li class="email">
+          <a href=""><i class="fa fa-fw fa-google"></i></a>
+        </li>
+      </ul>
+    </footer>
+    
+    
   </body>
 </html>
