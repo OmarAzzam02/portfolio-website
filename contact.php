@@ -137,19 +137,19 @@
     <footer class="footer">
       <ul class="socialIcons">
         <li class="facebook">
-          <a href=""><i class="fa fa-fw fa-facebook"></i></a>
+          <a href="" id="facebook"><i class="fa fa-fw fa-facebook"></i></a>
         </li>
         <li class="twitter">
-          <a href=""><i class="fa fa-fw fa-twitter"></i></a>
+          <a href="" id="X"><i class="fa fa-fw fa-twitter"></i></a>
         </li>
         <li class="instagram">
-          <a href=""><i class="fa fa-fw fa-instagram"></i></a>
+          <a href="" id="insta" ><i class="fa fa-fw fa-instagram"></i></a>
         </li>
         <li class="linkedin">
-          <a href=""><i class="fa fa-fw fa-linkedin"></i></a>
+          <a href="" id="link" ><i class="fa fa-fw fa-linkedin"></i></a>
         </li>
         <li class="email">
-          <a href=""><i class="fa fa-fw fa-google"></i></a>
+          <a href="" id="gmail" ><i class="fa fa-fw fa-google"></i></a>
         </li>
       </ul>
     </footer>
