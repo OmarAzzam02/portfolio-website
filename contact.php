@@ -1,5 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+  require_once("dbconn.php");
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $first_name = $_POST['fname'];
+        $last_name = $_POST['lname'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $message = $_POST['message'];
+        $sql = "INSERT INTO user (first_name, last_name, email, phone, message) 
+        VALUES ('$first_name', '$last_name', '$email', '$phone', '$message')";
+        $res = $conn->query($sql);
+        
+        if ($res) {
+          $insertedId = mysqli_insert_id($conn);
+          session_start();
+          $_SESSION['user_id'] = $insertedId;
+     
+        } else ' ';
+    }
+?>
+  
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -68,6 +90,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#">CONTACT US</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="review.php">REVIEWS</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -77,7 +102,7 @@
     <div class="card shadow">
       <h1 class="title">Get in touch</h1>
 
-      <form id="contact" action="handle_message.php" method="POST">
+      <form id="contact"  method="POST"  onsubmit="return validateAndProcessForm() ">
       <div class="container">
         <div class="contact-form row">
           
@@ -102,7 +127,7 @@
             <label for="message" class="label">Message</label>
           </div>
           <div class="form-field col-lg-12">
-            <input type="submit" class="btn btn-primary" name="" value="Send" />
+            <button type="submit" class="btn btn-primary" name="">Send</button>
           </div>
         </div>
       </div>
@@ -128,7 +153,7 @@
         </li>
       </ul>
     </footer>
-    
-    
+     
+
   </body>
 </html>

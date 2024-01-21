@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+        require_once("dbconn.php");
+        $sql = " select * from user";
+        $result = $conn->query($sql);
+        session_start();
+    ?>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <link rel="stylesheet" href="CSS/about.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,6 +31,9 @@
       src="https://kit.fontawesome.com/7b0357f5f0.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Linking CSS File index.css -->
+
+    <link rel="stylesheet" href="CSS/review.css" >
   </head>
 
   <body>
@@ -49,7 +58,8 @@
               <a class="nav-link" href="home.html">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT</a>
+              <!-- may edit see which one looks better  -->
+              <a class="nav-link" href="about.html#down">ABOUT</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="services.html">SERVICES </a>
@@ -58,13 +68,13 @@
               <a class="nav-link" href="resume.html">RESUME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects.html">PROJECTS</a>
+              <a class="nav-link" href="#">PROJECTS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.php">CONTACT US</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="review.php">REVIEWS</a>
+              <a class="nav-link" href="#">REVIEWS</a>
             </li>
           </ul>
         </div>
@@ -72,34 +82,49 @@
     </nav>
     <!-- Navigation Bar End -->
 
-    <div class="container">
-      <h1>Omar Azzam</h1>
-      <h2>Software Engineering</h2>
-      <div class="image-container">
-        <img src="assets/about-pic.png" />
-        <!-- change image -->
-      </div>
-      <div class="content" id="down">
-        <p>
-          As a software engineering enthusiast at PSUT, I'm driven by a profound
-          passion for coding, problem-solving, and mastering algorithms. My
-          journey isn't just about learning; it's propelled by an unyielding
-          curiosity and determination to unravel complexities. Each line of code
-          I write fuels my ambition to craft elegant solutions and deepen my
-          understanding. I thrive on challenges, seeing them as opportunities
-          for growth. Excelling in problem-solving isn't just a task; it's a
-          journey that allows me to expand my boundaries and innovate. I'm eager
-          to embrace new challenges, contribute meaningfully to software
-          engineering, and make a positive impact through technology. It's not
-          just about mastering the technical; it's about the relentless pursuit
-          of knowledge and the artistry in problem-solving
-        </p>
-        <button type="button" class="btn btn-outline-light">
-          Get in Touch
-        </button>
-      </div>
-    </div>
 
-    <!-- Main Section  -->
-  </body>
+    <div class="container-fluid">
+      <h1 class="title">
+        <span>Reviews</span>
+      </h1>
+      <hr class="line-under-review-title" />
+      <div class="row">
+        <!--   ******* Reviews Section satarts here*******   -->
+        <?php
+       while ($row = $result->fetch_assoc()) {
+        $first_name = $row['first_name'];
+        $last_name = $row['last_name'];
+        $message = $row['message'];
+        $id = $row['id'];
+    ?>
+
+        <div class="col main">
+          <div class="contents">
+            <div class="card">
+            <i class='fas fa-user-alt'></i>
+              <h3> 
+             <?php  
+              echo $first_name . " " . $last_name . yourMessage($id);
+              ?>
+              </h3>
+              <p>
+              <?php echo $message ?>
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- col ends here -->
+        <?php
+         }
+       ?>
+      </div>
+    </body>
 </html>
+<?php
+    function yourMessage($id) {
+        if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] == $id) 
+        return '<p id="sesh">- your message</p>';
+        else return '';
+    }
+   ?>

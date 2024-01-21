@@ -6,7 +6,15 @@
   background-color: #f7f7f7;
   width: 100%;
 }
+p {
+  font-family: "Lexend";
+  color: green;
+}
 
+span {
+  font-family: "Lexend";
+  color: red;
+}
 #navbarNav {
   justify-content: space-around;
 }
